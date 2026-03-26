@@ -1,0 +1,174 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(135deg, #000000 0%, #111111 40%, #d4af37 100%);
+    min-height: 100vh;
+    padding: 30px 8%;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* แสงขาว */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.08);
+    top: -100px;
+    left: -100px;
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+/* แสงทอง */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(212, 175, 55, 0.15);
+    bottom: -150px;
+    right: -150px;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+/* ===== NAV ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    background: linear-gradient(45deg, #d4af37, #fff3c4);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(45deg, #fff3c4, #d4af37); /* เปลี่ยนสี */
+    box-shadow: 0 12px 35px rgba(255,255,255,0.3);
+}
+
+/* login */
+.login-btn {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    color: #fff;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    margin-top: 120px;
+    max-width: 600px;
+    padding: 20px; /* เพิ่มตามโจทย์ */
+}
+
+/* หัวข้อ */
+.hero h1 {
+    font-size: 72px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #d4af37;
+
+    background: linear-gradient(to right, #ffffff, #d4af37);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ข้อความ */
+.hero p {
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 35px;
+}
+
+/* ===== IMAGE ===== */
+.hero img {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    width: 35%;
+    max-width: 400px;
+    opacity: 0.95;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ลอย */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== ANIMATION ===== */
+.anim {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero h1.anim { animation-delay: 0.3s; }
+.hero p.anim { animation-delay: 0.6s; }
+.hero a.anim { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
